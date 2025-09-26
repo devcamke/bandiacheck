@@ -1,16 +1,16 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.3.4"
+ruby "3.4.6"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 8.0.2"
+gem "rails", "~> 8.0.3"
 
 gem "propshaft"
 
 # Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 2.7"
-
+#gem "sqlite3", "~> 2.7"
+gem "pg"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 6.6"
 
@@ -34,7 +34,7 @@ gem "solid_cable"
 # gem "kredis"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
+gem "tzinfo-data", platforms: %i[ windows jruby ]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
@@ -47,7 +47,7 @@ gem "image_processing", "~> 1.2"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem "debug", platforms: %i[ windows jruby ]
   gem "rspec-rails"
   gem "dotenv-rails"
 end
